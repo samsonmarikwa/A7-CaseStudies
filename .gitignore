@@ -1,0 +1,5 @@
+**/node_modules/
+**/Archives/
+/Archives/*.zip
+/Archives/*.rar
+./Archives/

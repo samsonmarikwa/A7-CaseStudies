@@ -1,0 +1,52 @@
+
+<div style="border:1px solid blue">
+<h4 style="text-align:center; color:white;background-color:blue;margin:0px;padding:10px;">My Products</h4>
+<table class="table" style="border-top:1px solid blue">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Product Description</th>
+      <th>Price</th>
+      <th>Customer Rating</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>
+        <span class="badge">{{product.productId}}</span> 
+        <a routerLink="/detail/{{product.productId}}">
+          {{product.productName}}
+       </a>
+      </td>
+      <td> {{product.productDescription}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.customerRating}}</td>
+      <td> <button  title="delete product" class="delete" 
+    (click)="delete(product)">x</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<hr/>
+<div style="border:1px solid blue">
+<h4 style="text-align:center; color:white;background-color:blue;margin:0px;padding:10px;">Add a Product</h4>
+<div style="padding:20px">
+  <label>Product Id:</label>
+    <input #id value="{{nextId}}" disabled />
+  <label>Product Name:</label>
+    <input #name />
+  <label>Product Description:</label> 
+    <input #description />
+  <label>Customer Rating:</label> 
+    <input #rating type="number" />
+  <label>Price:</label> 
+    <input #price type="number" />
+  
+  
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(id.value, name.value,description.value,rating.value,price.value); name.value='';description.value='';rating.value='';price.value=''">
+    add
+  </button>
+</div>
+</div>
