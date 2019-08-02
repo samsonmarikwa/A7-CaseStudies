@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+     <ul>
+       <li *ngFor="let item of products"  class="cart-item">
+         <span class="cart-item__name">{{item.name}}</span>&nbsp;
+         <span class="cart-item__price">{{item.price}}</span>&nbsp;
+       <span #curr class="cart-item__price">{{item.currency}}</span>
+	   </li>
+     </ul>
+	 <b>
+    <div *ngIf="products" class="cart__total">Total: {{totalPrice}} {{products[0].currency}}</div>
+	<div *ngIf="! products" class="cart__total">1..2..3.. Hoard!! :)</div>
+	</b>
+  </div>
+</div>

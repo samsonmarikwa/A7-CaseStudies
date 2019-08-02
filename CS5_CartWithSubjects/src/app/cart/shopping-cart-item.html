@@ -1,0 +1,14 @@
+
+<div class="thumbnail col-md-5" >
+  <img src={{product.url}} class="fixwidth fixheight"  alt="product image" />
+  <div class="caption ">
+    <h5><a href={{product.url}}>{{product.name}}</a></h5>
+    <div class="product__price">{{product.price}} {{product.currency}}</div>
+    <div class="product__button-wrap">
+      <button  *ngIf="product.added"  (click)="RemoveProduct(product)" class="btn btn-primary">Remove
+      </button>
+      <button  *ngIf="! product.added"  (click)="AddProduct(product)" class="btn btn-primary">Add to cart
+       </button>
+    </div>
+  </div>
+</div>

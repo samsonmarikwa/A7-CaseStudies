@@ -24,7 +24,7 @@ export class ProductService {
 
   /** GET productes from the server */
   getProducts (): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl)
+   return  this.http.get<Product[]>(this.productsUrl)
       .pipe(
         tap(products => this.log(`fetched products`)),
         catchError(this.handleError('getProducts', []))
